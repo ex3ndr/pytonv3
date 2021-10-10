@@ -196,10 +196,12 @@ async def main(loop):
     lite_server_config = default_config
     if args.liteserverconfig:
       try:
+        print("Reading config from %s", args.liteserverconfig)
         with open(args.liteserverconfig, "r") as f:
           lite_server_config = json.loads(f.read())
       except Exception as e:
         print("Can't read provided lite_server_config (%s): %s", args.liteserverconfig, str(e))
+    print("Loaded config %s", json.dumps(lite_server_config))
 
     keystore= os.path.expanduser('ton_keystore')
     if not os.path.exists(keystore):
