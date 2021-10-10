@@ -73,7 +73,7 @@ class TonlibClient:
                 '@type': 'options',
                 'config': {
                     '@type': 'config',
-                    'config': json.dumps(self.config),
+                    'config': self.config,
                     'use_callbacks_for_network': False,
                     'blockchain_name':'',
                     'ignore_cache': False
